@@ -1,0 +1,16 @@
+# This dockerfile is used for running the Taito CLI integration test suite.
+# It contains all the tools provided by the Taito CLI default image. It also
+# provides Docker and Docker Compose, as they are required by CI/CD.
+
+FROM taitounited/taito-cli-deps:latest
+MAINTAINER Taito United <support@taitounited.fi>
+
+# Install docker (required for executing CI/CD builds on container)
+ENV DOCKER_VERSION=19.03.1
+RUN /taito-cli-deps/tools/install-docker-bin.sh
+
+# Install docker-compose (required for CI/CD tests)
+ENV DOCKER_COMPOSE_VERSION=1.24.1
+RUN /taito-cli-deps/tools/install-docker-compose.sh
+
+ENTRYPOINT ["bash"]

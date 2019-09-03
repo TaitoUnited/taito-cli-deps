@@ -1,0 +1,17 @@
+FROM taitounited/taito-cli-ci
+MAINTAINER Taito United <support@taitounited.fi>
+
+# Install aws cli and aws-iam-authenticator
+ENV AWS_VERSION=1.12.7/2019-03-27
+RUN /taito-cli-deps/tools/install-aws.sh
+
+# TODO: Install Azure tools
+
+# Install gcloud sdk
+ENV CLOUD_SDK_VERSION=259.0.0
+ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
+RUN /taito-cli-deps/tools/install-gcloud.sh
+
+# TODO: Install Digital Ocean tools
+
+ENTRYPOINT ["bash"]

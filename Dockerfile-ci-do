@@ -1,0 +1,6 @@
+FROM taitounited/taito-cli-ci
+MAINTAINER Taito United <support@taitounited.fi>
+
+# TODO: Install Digital Ocean tools
+
+ENTRYPOINT ["bash"]

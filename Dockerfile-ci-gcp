@@ -1,0 +1,9 @@
+FROM taitounited/taito-cli-ci
+MAINTAINER Taito United <support@taitounited.fi>
+
+# Install gcloud sdk
+ENV CLOUD_SDK_VERSION=259.0.0
+ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
+RUN /taito-cli-deps/tools/install-gcloud.sh
+
+ENTRYPOINT ["bash"]
