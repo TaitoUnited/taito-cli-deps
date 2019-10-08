@@ -1,6 +1,7 @@
 FROM taitounited/taito-cli-ci
 MAINTAINER Taito United <support@taitounited.fi>
 
-# TODO: Install Azure tools
+# Install Azure CLI
+RUN /taito-cli-deps/tools/install-azure-cli.sh
 
 ENTRYPOINT ["bash"]

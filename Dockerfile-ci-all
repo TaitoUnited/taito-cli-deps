@@ -5,7 +5,8 @@ MAINTAINER Taito United <support@taitounited.fi>
 ENV AWS_VERSION=1.12.7/2019-03-27
 RUN /taito-cli-deps/tools/install-aws.sh
 
-# TODO: Install Azure tools
+# Install Azure CLI
+RUN /taito-cli-deps/tools/install-azure-cli.sh
 
 # Install gcloud sdk
 ENV CLOUD_SDK_VERSION=259.0.0
