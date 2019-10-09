@@ -49,3 +49,6 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 # Install digitalocean cli
 ENV DO_VERSION 1.30.0
 RUN /taito-cli-deps/tools/install-do.sh
+
+# Install Azure CLI
+RUN /taito-cli-deps/tools/install-azure-cli.sh
