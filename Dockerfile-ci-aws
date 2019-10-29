@@ -2,7 +2,7 @@ FROM taitounited/taito-cli-ci
 MAINTAINER Taito United <support@taitounited.fi>
 
 # Install aws cli and aws-iam-authenticator
-ENV AWS_VERSION=1.12.7/2019-03-27
+ENV AWS_VERSION=1.14.6/2019-08-22
 RUN /taito-cli-deps/tools/install-aws.sh
 
 ENTRYPOINT ["bash"]

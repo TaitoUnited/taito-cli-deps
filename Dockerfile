@@ -27,19 +27,15 @@ ENV EDITOR=/bin/nano
 # Install depcheck for checking npm dependencies
 RUN npm install depcheck npm-check -g
 
-# Install terraform
-ENV TERRAFORM_VERSION 0.12.7
-RUN /taito-cli-deps/tools/install-terraform.sh
-
 # Install ansible
 RUN /taito-cli-deps/tools/install-ansible.sh
 
 # Install aws cli and aws-iam-authenticator for AWS
-ENV AWS_VERSION=1.12.7/2019-03-27
+ENV AWS_VERSION=1.14.6/2019-08-22
 RUN /taito-cli-deps/tools/install-aws.sh
 
 # Install gcloud sdk for GCP
-ENV CLOUD_SDK_VERSION=259.0.0
+ENV CLOUD_SDK_VERSION=269.0.0
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
 RUN /taito-cli-deps/tools/install-gcloud.sh
 
@@ -47,7 +43,7 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 # RUN /taito-cli-deps/tools/install-gcsfuse.sh
 
 # Install digitalocean cli
-ENV DO_VERSION 1.30.0
+ENV DO_VERSION 1.33.1
 RUN /taito-cli-deps/tools/install-do.sh
 
 # Install Azure CLI

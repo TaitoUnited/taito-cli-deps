@@ -20,6 +20,10 @@ RUN /taito-cli-deps/tools/install-helm.sh
 RUN /taito-cli-deps/tools/install-db-clients.sh
 RUN /taito-cli-deps/tools/install-sqitch.sh
 
+# Install terraform
+ENV TERRAFORM_VERSION 0.12.12
+RUN /taito-cli-deps/tools/install-terraform.sh
+
 # Install bats for Taito CLI unit testing
 RUN /taito-cli-deps/tools/install-bats.sh
 
