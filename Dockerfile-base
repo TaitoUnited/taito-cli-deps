@@ -12,6 +12,9 @@ RUN /taito-cli-deps/tools/install-basic.sh
 ENV NODEJS_VERSION 10.x
 RUN /taito-cli-deps/tools/install-nodejs.sh
 
+# Install serverless framework
+RUN npm install -g serverless
+
 # Install kubectl and helm for Kubernetes
 RUN /taito-cli-deps/tools/install-kubectl.sh
 RUN /taito-cli-deps/tools/install-helm.sh
