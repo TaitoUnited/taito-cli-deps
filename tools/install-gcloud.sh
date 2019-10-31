@@ -2,7 +2,6 @@
 
 set -eux; \
     apt-get -qqy update && apt-get install -qqy \
-      curl \
       python-dev \
       python-setuptools \
       python-pip \
@@ -19,7 +18,6 @@ set -eux; \
     chmod +x cloud_sql_proxy && \
     mv cloud_sql_proxy /usr/local/bin && \
     apt-get --purge remove -qqy \
-      curl \
       python-dev \
       python-setuptools \
       python-pip \

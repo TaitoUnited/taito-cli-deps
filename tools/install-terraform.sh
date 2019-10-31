@@ -2,14 +2,14 @@
 
 set -eux; \
     apt-get -qqy update && \
-    apt-get -qqy install curl unzip && \
+    apt-get -qqy install unzip && \
     mkdir /terraform && \
     cd /terraform && \
     curl -o terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform.zip && \
     mv terraform /usr/local/bin/terraform && \
     rm -rf /terraform && \
-    apt-get -qqy --purge remove curl unzip && \
+    apt-get -qqy --purge remove unzip && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
