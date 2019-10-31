@@ -9,6 +9,10 @@ MAINTAINER Taito United <support@taitounited.fi>
 ENV DOCKER_VERSION=19.03.1
 RUN /taito-cli-deps/tools/install-docker-bin.sh
 
+# Install dockerd
+# On AWS CodeBuild dockerd must be running when building docker images
+RUN /taito-cli-deps/tools/install-dockerd-bin.sh
+
 # Install docker-compose (required for CI/CD tests)
 ENV DOCKER_COMPOSE_VERSION=1.24.1
 RUN /taito-cli-deps/tools/install-docker-compose.sh

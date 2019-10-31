@@ -1,6 +1,10 @@
 FROM taitounited/taito-cli-ci
 MAINTAINER Taito United <support@taitounited.fi>
 
+# Install dockerd
+# On AWS CodeBuild dockerd must be running when building docker images
+RUN /taito-cli-deps/tools/install-dockerd-bin.sh
+
 # Install aws cli and aws-iam-authenticator
 ENV AWS_VERSION=1.14.6/2019-08-22
 RUN /taito-cli-deps/tools/install-aws.sh
