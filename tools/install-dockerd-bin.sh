@@ -10,7 +10,6 @@ set -eux; \
     upx -9v docker/* && \
     mv docker/* /usr/bin && \
     rmdir docker && \
-    groupadd --gid 999 docker && \
     apt-get -qqy --purge remove curl && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
