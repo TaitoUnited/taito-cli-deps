@@ -10,7 +10,6 @@ set -eux; \
         /etc/apt/sources.list.d/azure-cli.list && \
     apt-get -qqy update && \
     apt-get -qqy install azure-cli && \
-    az extension add --name azure-devops && \
     apt-get -qqy --purge remove gnupg && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \

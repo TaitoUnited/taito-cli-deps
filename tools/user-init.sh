@@ -18,3 +18,9 @@ su "${username}" -s /bin/sh -c "
   helm repo update &&
   helm tiller stop
 "
+
+su "${username}" -s /bin/bash -c "
+  if hash az 2>/dev/null; then
+    az extension add --name azure-devops
+  fi
+"
