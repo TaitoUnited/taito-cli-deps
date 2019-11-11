@@ -20,5 +20,3 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 # Install digitalocean cli
 ENV DO_VERSION 1.33.1
 RUN /taito-cli-deps/tools/install-do.sh
-
-ENTRYPOINT ["bash"]

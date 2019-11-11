@@ -3,5 +3,3 @@ MAINTAINER Taito United <support@taitounited.fi>
 
 # Install Azure CLI
 RUN /taito-cli-deps/tools/install-azure-cli.sh
-
-ENTRYPOINT []

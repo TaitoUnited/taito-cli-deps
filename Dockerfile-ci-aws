@@ -8,5 +8,3 @@ RUN /taito-cli-deps/tools/install-dockerd-bin.sh
 # Install aws cli and aws-iam-authenticator
 ENV AWS_VERSION=1.14.6/2019-08-22
 RUN /taito-cli-deps/tools/install-aws.sh
-
-ENTRYPOINT ["bash"]

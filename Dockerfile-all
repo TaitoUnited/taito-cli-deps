@@ -17,5 +17,3 @@ RUN /taito-cli-deps/tools/install-dockerd-bin.sh
 # Install docker-compose (required for CI/CD tests)
 ENV DOCKER_COMPOSE_VERSION=1.24.1
 RUN /taito-cli-deps/tools/install-docker-compose.sh
-
-ENTRYPOINT ["bash"]
