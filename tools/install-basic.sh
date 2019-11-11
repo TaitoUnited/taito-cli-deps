@@ -10,6 +10,9 @@ set -eux; \
       procps \
       apt-transport-https \
       ca-certificates \
-      software-properties-common && \
+      software-properties-common \
+      gettext-base \
+      unzip \
+      zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
