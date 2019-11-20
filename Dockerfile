@@ -11,7 +11,6 @@ RUN apt-get -y update && \
       perl-doc \
       less \
       telnet \
-      jq \
       apache2-utils \
       vim \
       nano \

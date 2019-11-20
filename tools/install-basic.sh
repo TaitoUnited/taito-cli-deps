@@ -7,6 +7,7 @@ set -eux; \
       gnupg \
       git \
       bash \
+      jq \
       procps \
       apt-transport-https \
       ca-certificates \
