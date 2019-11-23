@@ -2,8 +2,7 @@
 # It contains all the tools provided by the Taito CLI default image. It also
 # provides Docker and Docker Compose, as they are required by CI/CD.
 
-# TODO: rename latest -> cli
-FROM taitounited/taito-cli-deps:latest
+FROM taitounited/taito-cli-deps:cli
 MAINTAINER Taito United <support@taitounited.fi>
 
 # Install docker (required for executing CI/CD builds on container)
