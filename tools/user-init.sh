@@ -1,6 +1,12 @@
 #!/bin/bash
 
-username=${1}
+if [[ ${1} ]]; then
+  username=${1}
+  su="su ${username} -s"
+else
+  username=$(whoami)
+  su=""
+fi
 
 echo
 echo "-----------------------------------------------------------------"
@@ -8,7 +14,7 @@ echo "Initializing user $username"
 echo "-----------------------------------------------------------------"
 echo
 
-su "${username}" -s /bin/sh -c "
+${su} /bin/sh -c "
   helm init --client-only &&
   helm plugin install https://github.com/rimusz/helm-tiller &&
   helm tiller start-ci &&
@@ -19,7 +25,7 @@ su "${username}" -s /bin/sh -c "
   helm tiller stop
 "
 
-su "${username}" -s /bin/bash -c "
+${su} /bin/bash -c "
   if hash az 2>/dev/null; then
     az extension add --name azure-devops
   fi
