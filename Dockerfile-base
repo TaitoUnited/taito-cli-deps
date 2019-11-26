@@ -9,7 +9,6 @@ WORKDIR /tmp
 RUN /taito-cli-deps/tools/install-basic.sh
 
 # Install Node.js
-ENV NODEJS_VERSION 10.x
 RUN /taito-cli-deps/tools/install-nodejs.sh
 
 # Install yamljs for yaml-json conversions
@@ -24,7 +23,6 @@ RUN /taito-cli-deps/tools/install-db-clients.sh
 RUN /taito-cli-deps/tools/install-sqitch.sh
 
 # Install terraform
-ENV TERRAFORM_VERSION 0.12.12
 RUN /taito-cli-deps/tools/install-terraform.sh
 
 # Install bats for Taito CLI unit testing

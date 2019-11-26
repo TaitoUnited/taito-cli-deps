@@ -6,17 +6,14 @@ MAINTAINER Taito United <support@taitounited.fi>
 RUN /taito-cli-deps/tools/install-dockerd-bin.sh
 
 # Install aws cli and aws-iam-authenticator
-ENV AWS_VERSION=1.14.6/2019-08-22
 RUN /taito-cli-deps/tools/install-aws.sh
 
 # Install Azure CLI
 RUN /taito-cli-deps/tools/install-azure-cli.sh
 
 # Install gcloud sdk
-ENV CLOUD_SDK_VERSION=269.0.0
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
 RUN /taito-cli-deps/tools/install-gcloud.sh
 
 # Install digitalocean cli
-ENV DO_VERSION 1.33.1
 RUN /taito-cli-deps/tools/install-do.sh

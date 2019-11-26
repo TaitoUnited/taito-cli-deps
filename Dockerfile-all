@@ -6,7 +6,6 @@ FROM taitounited/taito-cli-deps:cli
 MAINTAINER Taito United <support@taitounited.fi>
 
 # Install docker (required for executing CI/CD builds on container)
-ENV DOCKER_VERSION=19.03.1
 RUN /taito-cli-deps/tools/install-docker-bin.sh
 
 # Install dockerd
@@ -14,5 +13,4 @@ RUN /taito-cli-deps/tools/install-docker-bin.sh
 RUN /taito-cli-deps/tools/install-dockerd-bin.sh
 
 # Install docker-compose (required for CI/CD tests)
-ENV DOCKER_COMPOSE_VERSION=1.24.1
 RUN /taito-cli-deps/tools/install-docker-compose.sh
