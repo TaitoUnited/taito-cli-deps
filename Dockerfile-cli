@@ -14,7 +14,8 @@ RUN apt-get -y update && \
       apache2-utils \
       vim \
       nano \
-      wamerican \
+      pwgen \
+      xkcdpass \
       groff \
       dnsutils && \
     apt-get clean && \
