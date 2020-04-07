@@ -3,7 +3,7 @@
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install upx-ucl iptables && \
-    export DOCKER_VERSION=${DOCKER_VERSION:-19.03.5} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-19.03.8} && \
     curl -fsSL \
       https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | \
       tar -xzvf - docker && \
