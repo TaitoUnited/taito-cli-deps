@@ -17,3 +17,6 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 
 # Install digitalocean cli
 RUN /taito-cli-deps/tools/install-do.sh
+
+# Install OpenShift cli
+RUN /taito-cli-deps/tools/install-openshift-cli.sh

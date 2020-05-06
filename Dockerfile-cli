@@ -31,6 +31,9 @@ RUN /taito-cli-deps/tools/install-ansible.sh
 # Install aws cli and aws-iam-authenticator for AWS
 RUN /taito-cli-deps/tools/install-aws.sh
 
+# Install Azure CLI
+RUN /taito-cli-deps/tools/install-azure-cli.sh
+
 # Install gcloud sdk for GCP
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
 RUN /taito-cli-deps/tools/install-gcloud.sh
@@ -41,5 +44,5 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 # Install digitalocean cli
 RUN /taito-cli-deps/tools/install-do.sh
 
-# Install Azure CLI
-RUN /taito-cli-deps/tools/install-azure-cli.sh
+# Install OpenShift cli
+RUN /taito-cli-deps/tools/install-openshift-cli.sh

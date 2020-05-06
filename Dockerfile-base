@@ -18,9 +18,6 @@ RUN npm install -g yamljs
 RUN /taito-cli-deps/tools/install-kubectl.sh
 RUN /taito-cli-deps/tools/install-helm.sh
 
-# Install OpenShift cli
-RUN /taito-cli-deps/tools/install-openshift-cli.sh
-
 # Install database tools
 RUN /taito-cli-deps/tools/install-db-clients.sh
 RUN /taito-cli-deps/tools/install-sqitch.sh

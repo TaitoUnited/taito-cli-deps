@@ -1,0 +1,5 @@
+FROM taitounited/taito-cli-ci
+MAINTAINER Taito United <support@taitounited.fi>
+
+# Install OpenShift cli
+RUN /taito-cli-deps/tools/install-openshift-cli.sh
