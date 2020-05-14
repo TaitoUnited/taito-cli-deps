@@ -14,16 +14,26 @@ echo "Initializing user $username"
 echo "-----------------------------------------------------------------"
 echo
 
-${su} /bin/sh -c "
-  helm init --client-only &&
-  helm plugin install https://github.com/rimusz/helm-tiller &&
-  helm tiller start-ci &&
-  helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
-  helm repo add jetstack https://charts.jetstack.io &&
-  helm repo add bitnami https://charts.bitnami.com &&
-  helm repo update &&
-  helm tiller stop
-"
+if helm version | grep "Version:\"v2." > /dev/null; then
+  # TODO: remove once helm v2 is obsolete
+  ${su} /bin/sh -c "
+    helm init --client-only &&
+    helm plugin install https://github.com/rimusz/helm-tiller &&
+    helm tiller start-ci &&
+    helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
+    helm repo add jetstack https://charts.jetstack.io &&
+    helm repo add bitnami https://charts.bitnami.com &&
+    helm repo update &&
+    helm tiller stop
+  "
+else
+  ${su} /bin/sh -c "
+    helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
+    helm repo add jetstack https://charts.jetstack.io &&
+    helm repo add bitnami https://charts.bitnami.com &&
+    helm repo update
+  "
+fi
 
 ${su} /bin/bash -c "
   if hash az 2>/dev/null; then
