@@ -14,7 +14,7 @@ echo "Initializing user $username"
 echo "-----------------------------------------------------------------"
 echo
 
-if helm version | grep "Version:\"v2." > /dev/null; then
+if helm version | grep "SemVer:\"v2." > /dev/null; then
   # TODO: remove once helm v2 is obsolete
   ${su} /bin/sh -c "
     helm init --client-only &&
