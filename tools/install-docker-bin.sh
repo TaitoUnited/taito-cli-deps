@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 set -eux; \
-    export DOCKER_VERSION=${DOCKER_VERSION:-19.03.8} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-19.03.9} && \
     curl -fsSL \
       https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | \
       tar -xzvf - docker/docker && \
