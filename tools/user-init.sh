@@ -22,6 +22,7 @@ if helm version | grep "SemVer:\"v2." > /dev/null; then
     helm tiller start-ci &&
     helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
     helm repo add jetstack https://charts.jetstack.io &&
+    helm repo add bitnami https://charts.bitnami.com/bitnami &&
     helm repo update &&
     helm tiller stop
   "
@@ -29,6 +30,7 @@ else
   ${su} /bin/sh -c "
     helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
     helm repo add jetstack https://charts.jetstack.io &&
+    helm repo add bitnami https://charts.bitnami.com/bitnami &&
     helm repo update
   "
 fi
