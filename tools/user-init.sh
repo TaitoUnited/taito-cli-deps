@@ -14,26 +14,26 @@ echo "Initializing user $username"
 echo "-----------------------------------------------------------------"
 echo
 
-if helm version | grep "SemVer:\"v2." > /dev/null; then
-  # TODO: remove once helm v2 is obsolete
-  ${su} /bin/sh -c "
-    helm init --client-only &&
-    helm plugin install https://github.com/rimusz/helm-tiller &&
-    helm tiller start-ci &&
-    helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
-    helm repo add jetstack https://charts.jetstack.io &&
-    helm repo add bitnami https://charts.bitnami.com/bitnami &&
-    helm repo update &&
-    helm tiller stop
-  "
-else
-  ${su} /bin/sh -c "
-    helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
-    helm repo add jetstack https://charts.jetstack.io &&
-    helm repo add bitnami https://charts.bitnami.com/bitnami &&
-    helm repo update
-  "
-fi
+# Helm v2
+${su} /bin/sh -c "
+  helm2 init --client-only &&
+  helm2 plugin install https://github.com/rimusz/helm-tiller &&
+  helm2 tiller start-ci &&
+  helm2 repo add taito-charts https://taitounited.github.io/taito-charts/ &&
+  helm2 repo add jetstack https://charts.jetstack.io &&
+  helm2 repo add bitnami https://charts.bitnami.com/bitnami &&
+  helm2 repo update &&
+  helm2 tiller stop
+"
+
+# Helm v3
+${su} /bin/sh -c "
+  helm plugin install https://github.com/helm/helm-2to3.git
+  helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
+  helm repo add jetstack https://charts.jetstack.io &&
+  helm repo add bitnami https://charts.bitnami.com/bitnami &&
+  helm repo update
+"
 
 ${su} /bin/bash -c "
   if hash az 2>/dev/null; then
