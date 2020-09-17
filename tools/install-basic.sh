@@ -8,6 +8,7 @@ set -eux; \
       git \
       bash \
       jq \
+      httpie \
       procps \
       apt-transport-https \
       ca-certificates \
