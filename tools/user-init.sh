@@ -28,8 +28,9 @@ ${su} /bin/sh -c "
 
 # Helm v3
 ${su} /bin/sh -c "
-  helm plugin install https://github.com/helm/helm-2to3.git
-  helm repo add taito-charts https://taitounited.github.io/taito-charts/ &&
+  helm plugin install https://github.com/helm/helm-2to3.git &&
+  helm repo add taito-charts https://taitounited.github.io/taito-charts &&
+  helm repo add stable https://kubernetes-charts.storage.googleapis.com &&
   helm repo add jetstack https://charts.jetstack.io &&
   helm repo add bitnami https://charts.bitnami.com/bitnami &&
   helm repo update
