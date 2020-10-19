@@ -16,6 +16,7 @@ RUN apt-get -y update && \
       nano \
       pwgen \
       xkcdpass \
+      uuid-runtime \
       groff \
       dnsutils && \
     apt-get clean && \
