@@ -3,7 +3,7 @@
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install iptables && \
-    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.2} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.3} && \
     curl -fsSL \
       https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz | \
       tar -xzvf - docker && \
