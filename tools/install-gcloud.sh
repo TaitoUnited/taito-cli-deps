@@ -12,7 +12,7 @@ set -eux; \
       /etc/apt/sources.list.d/google-cloud-sdk.list && \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && \
     apt-get update && \
-    export CLOUD_SDK_VERSION=${CLOUD_SDK_VERSION:-328.0.0} && \
+    export CLOUD_SDK_VERSION=${CLOUD_SDK_VERSION:-335.0.0} && \
     apt-get install -y google-cloud-sdk=${CLOUD_SDK_VERSION}-0 && \
     curl https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 \
       > cloud_sql_proxy && \
