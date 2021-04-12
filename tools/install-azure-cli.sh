@@ -14,3 +14,11 @@ set -eux; \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+set -eux; \
+    cd /tmp && \
+    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.0.9} && \
+    curl -L https://github.com/Azure/kubelogin/releases/download/v${KUBELOGIN_VERSION}/kubelogin-linux-amd64.zip --output kubelogin.zip && \
+    unzip kubelogin.zip && \
+    mv bin/linux_amd64/kubelogin /usr/local/bin/kubelogin && \
+    rm -rf bin
