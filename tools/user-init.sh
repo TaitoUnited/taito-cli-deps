@@ -33,6 +33,7 @@ ${su} /bin/sh -c "
   helm repo add stable https://charts.helm.sh/stable &&
   helm repo add jetstack https://charts.jetstack.io &&
   helm repo add bitnami https://charts.bitnami.com/bitnami &&
+  helm repo add argo https://argoproj.github.io/argo-helm &&
   helm repo update
 "
 

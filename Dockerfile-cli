@@ -48,5 +48,8 @@ RUN /taito-cli-deps/tools/install-do.sh
 # Install OpenShift cli
 RUN /taito-cli-deps/tools/install-openshift-cli.sh
 
+# Install Argo CLI
+RUN /taito-cli-deps/tools/install-argo-cli.sh
+
 # Install docker (required for executing CI/CD builds on container)
 RUN /taito-cli-deps/tools/install-docker-bin.sh
