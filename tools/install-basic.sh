@@ -10,6 +10,7 @@ set -eux; \
       jq \
       httpie \
       procps \
+      openvpn \
       apt-transport-https \
       ca-certificates \
       software-properties-common \
