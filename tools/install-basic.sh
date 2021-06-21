@@ -12,6 +12,7 @@ set -eux; \
       procps \
       lsb-release \
       openvpn \
+      easy-rsa \
       apt-transport-https \
       ca-certificates \
       software-properties-common \
