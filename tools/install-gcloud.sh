@@ -14,7 +14,7 @@ set -eux; \
     apt-get update && \
     export CLOUD_SDK_VERSION=${CLOUD_SDK_VERSION:-345.0.0} && \
     apt-get install -y google-cloud-sdk=${CLOUD_SDK_VERSION}-0 && \
-    curl https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 \
+    curl "https://dl.google.com/cloudsql/cloud_sql_proxy.linux.${TARGETPLATFORM#linux/}" \
       > cloud_sql_proxy && \
     chmod +x cloud_sql_proxy && \
     mv cloud_sql_proxy /usr/local/bin && \

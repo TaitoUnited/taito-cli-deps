@@ -1,6 +1,8 @@
 FROM debian:stable-slim
 MAINTAINER Taito United <support@taitounited.fi>
 
+ARG TARGETPLATFORM
+
 USER root
 COPY . /taito-cli-deps
 WORKDIR /tmp
