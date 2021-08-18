@@ -5,6 +5,9 @@ set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install ca-certificates apt-transport-https lsb-release gnupg && \
     curl -sL https://packages.microsoft.com/keys/microsoft.asc |
+      gpg --dearmor |
+      sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc |
         gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.asc.gpg && \
     echo "deb [arch=${TARGETPLATFORM#linux/}] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > \
         /etc/apt/sources.list.d/azure-cli.list && \
