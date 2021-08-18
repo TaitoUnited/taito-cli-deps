@@ -2,7 +2,7 @@
 # It contains all the tools provided by the Taito CLI default image. It also
 # provides Docker and Docker Compose, as they are required by CI/CD.
 
-FROM taitounited/taito-cli-deps:cli
+FROM ghcr.io/taitounited/taito-cli-deps:cli
 MAINTAINER Taito United <support@taitounited.fi>
 
 # Install dockerd

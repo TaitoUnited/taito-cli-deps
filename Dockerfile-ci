@@ -1,4 +1,4 @@
-FROM taitounited/taito-cli-base
+FROM ghcr.io/taitounited/taito-cli-deps:base
 MAINTAINER Taito United <support@taitounited.fi>
 
 # Install docker (required for executing CI/CD builds on container)

@@ -1,4 +1,4 @@
-FROM taitounited/taito-cli-base
+FROM ghcr.io/taitounited/taito-cli-deps:base
 MAINTAINER Taito United <support@taitounited.fi>
 
 # TODO: Backwards compatibility for auth sessions. Remove later.
