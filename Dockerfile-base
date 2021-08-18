@@ -2,6 +2,7 @@ FROM debian:stable-slim
 MAINTAINER Taito United <support@taitounited.fi>
 
 ARG TARGETPLATFORM
+ENV TARGETPLATFORM ${TARGETPLATFORM}
 
 USER root
 COPY . /taito-cli-deps
