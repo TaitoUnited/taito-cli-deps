@@ -21,7 +21,7 @@ set -eux; \
     export KUBELOGIN_ARCH="linux-${TARGETPLATFORM#linux/}" && \
     # TODO: not available for linux/arm64?
     if [ "${KUBELOGIN_ARCH}" = "linux-arm64" ]; then export KUBELOGIN_ARCH="darwin-arm64"; fi && \
-    curl -L "https://github.com/Azure/kubelogin/releases/download/v${KUBELOGIN_VERSION}/kubelogin-linux-${TARGETPLATFORM#linux/}.zip" --output kubelogin.zip && \
+    curl -L "https://github.com/Azure/kubelogin/releases/download/v${KUBELOGIN_VERSION}/kubelogin-${KUBELOGIN_ARCH}.zip" --output kubelogin.zip && \
     unzip kubelogin.zip && \
     mv "bin/linux_${TARGETPLATFORM#linux/}/kubelogin" /usr/local/bin/kubelogin && \
     rm -rf bin
