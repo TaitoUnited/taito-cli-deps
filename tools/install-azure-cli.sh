@@ -2,8 +2,6 @@
 
 set -eux; \
     cd /tmp && \
-    apt-get -qqy update && \
-    apt-get -qqy install ca-certificates apt-transport-https lsb-release gnupg && \
     curl -sL https://packages.microsoft.com/keys/microsoft.asc |
       gpg --dearmor |
       sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
@@ -13,7 +11,6 @@ set -eux; \
         /etc/apt/sources.list.d/azure-cli.list && \
     apt-get -qqy update && \
     apt-get -qqy install azure-cli && \
-    apt-get -qqy --purge remove gnupg && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
