@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 set -eux; \
-    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.8} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.7} && \
     export DOCKER_ARCH="x86_64" && \
     if [ ${TARGETPLATFORM} = "linux/arm64" ]; then export DOCKER_ARCH="aarch64"; fi && \
     curl -fsSL \
