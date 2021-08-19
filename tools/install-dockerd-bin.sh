@@ -10,6 +10,8 @@ set -eux; \
       https://download.docker.com/linux/static/stable/${DOCKER_ARCH}/docker-$DOCKER_VERSION.tgz | \
       tar -xzvf - docker && \
     rm docker/docker && \
+    # NOTE: quick fix for upx: "docker/ctr: CantPackException: bad DT_SYMTAB"
+    if [ ${TARGETPLATFORM} = "linux/arm64" ]; then rm -f docker/ctr; fi && \
     upx -9v docker/* && \
     mv docker/* /usr/bin && \
     rmdir docker && \
