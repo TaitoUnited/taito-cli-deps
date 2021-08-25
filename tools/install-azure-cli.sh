@@ -11,8 +11,7 @@ set -eux; \
         /etc/apt/sources.list.d/azure-cli.list && \
     apt-get -qqy update && \
     apt-get -qqy install azure-cli && \
-    # TODO: fails on /usr/bin/az: line 3: /usr/bin/../../opt/az/bin/python3: No such file or directory
-    # az extension add --name azure-devops && \
+    az extension add --name azure-devops && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
