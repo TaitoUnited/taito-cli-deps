@@ -6,6 +6,7 @@ MAINTAINER Taito United <support@taitounited.fi>
 RUN /taito-cli-deps/tools/install-dockerd-bin.sh
 
 # Install aws cli and aws-iam-authenticator
+RUN /taito-cli-deps/tools/install-python3.sh
 RUN /taito-cli-deps/tools/install-aws.sh
 
 # Install Azure CLI

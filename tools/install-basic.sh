@@ -17,13 +17,8 @@ set -eux; \
       ca-certificates \
       software-properties-common \
       gettext-base \
-      python3 \
-      python3-venv \
       upx-ucl \
       unzip \
       zip && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    # Use python3 by default
-    rm -rf /usr/bin/python && \
-    ln -s /usr/bin/python3.7 /usr/bin/python
+    rm -rf /var/lib/apt/lists/*
