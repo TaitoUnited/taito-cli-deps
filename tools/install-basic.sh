@@ -17,6 +17,8 @@ set -eux; \
       ca-certificates \
       software-properties-common \
       gettext-base \
+      python3 \
+      python3-venv \
       upx-ucl \
       unzip \
       zip && \
