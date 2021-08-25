@@ -23,4 +23,7 @@ set -eux; \
       unzip \
       zip && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    # Use python3 by default
+    rm -rf /usr/bin/python && \
+    ln -s /usr/bin/python3.7 /usr/bin/python
