@@ -23,6 +23,9 @@ RUN apt-get -y update && \
     rm -rf /var/lib/apt/lists/*
 ENV EDITOR=/bin/nano
 
+# Install python3
+RUN /taito-cli-deps/tools/install-python3.sh
+
 # Install depcheck for checking npm dependencies
 RUN npm install depcheck npm-check -g
 
@@ -30,7 +33,6 @@ RUN npm install depcheck npm-check -g
 RUN /taito-cli-deps/tools/install-ansible.sh
 
 # Install aws cli and aws-iam-authenticator for AWS
-RUN /taito-cli-deps/tools/install-python3.sh
 RUN /taito-cli-deps/tools/install-aws.sh
 
 # Install Azure CLI
