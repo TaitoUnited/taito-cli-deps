@@ -17,7 +17,6 @@ set -eux; \
       ca-certificates \
       software-properties-common \
       gettext-base \
-      upx-ucl \
       unzip \
       zip && \
     apt-get clean && \
