@@ -17,7 +17,6 @@ set -eux; \
       ca-certificates \
       software-properties-common \
       gettext-base \
-      unzip \
       zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
