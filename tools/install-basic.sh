@@ -9,14 +9,12 @@ set -eux; \
       bash \
       jq \
       httpie \
-      procps \
       lsb-release \
       openvpn \
       easy-rsa \
       apt-transport-https \
       ca-certificates \
       software-properties-common \
-      gettext-base \
-      zip && \
+      gettext-base && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
