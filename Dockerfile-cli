@@ -8,6 +8,7 @@ RUN mkdir -p /builder/google-cloud-sdk/bin && \
 # Install some extra tools for local use of Taito CLI
 RUN apt-get -y update && \
     apt-get -y install \
+      git \
       perl-doc \
       less \
       telnet \
@@ -22,6 +23,9 @@ RUN apt-get -y update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 ENV EDITOR=/bin/nano
+
+# Install bats for Taito CLI unit testing
+RUN /taito-cli-deps/tools/install-bats.sh
 
 # Install python3
 RUN /taito-cli-deps/tools/install-python3.sh

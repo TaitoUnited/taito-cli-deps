@@ -11,9 +11,6 @@ WORKDIR /tmp
 # Install some basic tools
 RUN /taito-cli-deps/tools/install-basic.sh
 
-# Install bats for Taito CLI unit testing (small size)
-RUN /taito-cli-deps/tools/install-bats.sh
-
 # Install Node.js for executing npm commands and running Node.js builds
 RUN /taito-cli-deps/tools/install-nodejs.sh
 

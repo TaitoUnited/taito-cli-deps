@@ -6,7 +6,6 @@ set -eux; \
     apt-get -qqy install \
       curl \
       gnupg \
-      git \
       bash \
       jq \
       httpie \
