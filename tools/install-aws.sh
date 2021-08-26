@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# TODO: AWS bundle is quite large. Install only some of it or compress with upx.
+
 set -eux; \
     cd /tmp && \
     apt-get -qqy update && \

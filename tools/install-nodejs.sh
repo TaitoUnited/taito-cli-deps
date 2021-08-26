@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# TODO: Node.js is quite large. Install only some of it or compress with upx.
+
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install build-essential && \
