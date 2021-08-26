@@ -31,13 +31,16 @@ RUN /taito-cli-deps/tools/install-bats.sh
 # Install python3
 RUN /taito-cli-deps/tools/install-python3.sh
 
-# Install Helm for deploying to Kubernetes
+# Install Kubectl for Kubernetes
+RUN /taito-cli-deps/tools/install-kubectl.sh
+
+# Install Helm for Kubernetes
 RUN /taito-cli-deps/tools/install-helm.sh
 
-# Install Terraform for deploying configuration changes to cloud
+# Install Terraform for cloud
 RUN /taito-cli-deps/tools/install-terraform.sh
 
-# Install database tools for deploying database migrations to database
+# Install database tools
 RUN /taito-cli-deps/tools/install-db-clients.sh
 RUN /taito-cli-deps/tools/install-sqitch.sh
 
