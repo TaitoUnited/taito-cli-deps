@@ -8,7 +8,6 @@ RUN mkdir -p /builder/google-cloud-sdk/bin && \
 # Install some extra tools for local use of Taito CLI
 RUN apt-get -y update && \
     apt-get -y install \
-      git \
       perl-doc \
       less \
       telnet \
