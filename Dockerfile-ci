@@ -1,8 +1,8 @@
 FROM ghcr.io/taitounited/taito-cli-deps:base
 MAINTAINER Taito United <support@taitounited.fi>
 
-# Install docker (required for executing CI/CD builds on container)
+# Install Docker for executing docker builds
 RUN /taito-cli-deps/tools/install-docker-bin.sh
 
-# Install docker-compose (required for CI/CD tests)
+# Install Docker Compose for running integration test suites
 RUN /taito-cli-deps/tools/install-docker-compose.sh

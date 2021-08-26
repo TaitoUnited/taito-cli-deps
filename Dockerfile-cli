@@ -26,6 +26,16 @@ ENV EDITOR=/bin/nano
 # Install python3
 RUN /taito-cli-deps/tools/install-python3.sh
 
+# Install Helm for deploying to Kubernetes
+RUN /taito-cli-deps/tools/install-helm.sh
+
+# Install Terraform for deploying configuration changes to cloud
+RUN /taito-cli-deps/tools/install-terraform.sh
+
+# Install database tools for deploying database migrations to database
+RUN /taito-cli-deps/tools/install-db-clients.sh
+RUN /taito-cli-deps/tools/install-sqitch.sh
+
 # Install depcheck for checking npm dependencies
 RUN npm install depcheck npm-check -g
 

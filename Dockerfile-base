@@ -11,25 +11,20 @@ WORKDIR /tmp
 # Install some basic tools
 RUN /taito-cli-deps/tools/install-basic.sh
 
-# Install Node.js
+# Install bats for Taito CLI unit testing (small size)
+RUN /taito-cli-deps/tools/install-bats.sh
+
+# Install Node.js for executing npm commands and running Node.js builds
 RUN /taito-cli-deps/tools/install-nodejs.sh
 
-# Install yamljs for yaml-json conversions
+# Install yamljs for yaml-json conversions (small size)
 RUN npm install -g yamljs
 
-# Install kubectl and helm for Kubernetes
+# Install Google Cloud SQL proxy (db proxy for test suites, db migrations, etc.)
+RUN /taito-cli-deps/tools/install-gcloud-sql-proxy.sh
+
+# Install Kubectl (db proxy for test suites, db migrations, etc.)
 RUN /taito-cli-deps/tools/install-kubectl.sh
-RUN /taito-cli-deps/tools/install-helm.sh
-
-# Install database tools
-RUN /taito-cli-deps/tools/install-db-clients.sh
-RUN /taito-cli-deps/tools/install-sqitch.sh
-
-# Install terraform
-RUN /taito-cli-deps/tools/install-terraform.sh
-
-# Install bats for Taito CLI unit testing
-RUN /taito-cli-deps/tools/install-bats.sh
 
 # Initialize root user
 RUN /taito-cli-deps/tools/user-init.sh root

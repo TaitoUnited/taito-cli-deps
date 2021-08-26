@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+# TODO: most of these are not required in base image
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install \
