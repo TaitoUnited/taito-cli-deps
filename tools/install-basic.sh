@@ -10,6 +10,7 @@ set -eux; \
       httpie \
       lsb-release \
       procps \
+      gnupg \
       openvpn \
       apt-transport-https \
       ca-certificates \
