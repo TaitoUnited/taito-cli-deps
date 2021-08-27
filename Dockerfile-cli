@@ -9,7 +9,6 @@ RUN mkdir -p /builder/google-cloud-sdk/bin && \
 RUN apt-get -y update && \
     apt-get -y install \
       easy-rsa \
-      gettext-base \
       perl-doc \
       git \
       less \

@@ -11,6 +11,7 @@ set -eux; \
       lsb-release \
       procps \
       gnupg \
+      gettext-base \
       openvpn \
       apt-transport-https \
       ca-certificates \
