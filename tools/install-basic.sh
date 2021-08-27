@@ -9,6 +9,7 @@ set -eux; \
       jq \
       httpie \
       lsb-release \
+      procps \
       openvpn \
       apt-transport-https \
       ca-certificates \

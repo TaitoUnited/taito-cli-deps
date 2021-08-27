@@ -21,7 +21,6 @@ RUN apt-get -y update && \
       xkcdpass \
       uuid-runtime \
       groff \
-      procps \
       zip \
       dnsutils && \
     apt-get clean && \
