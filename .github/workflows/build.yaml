@@ -65,7 +65,7 @@ jobs:
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
-          file: ./Dockerfile-ci-deploy
+          file: ./Dockerfile-ci-dockerd
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/taitounited/taito-cli-deps:ci-dockerd
