@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 # TODO: Azure CLI is quite large. Install only some of it or compress with upx.
+# Remove custom python3 (/opt/az/bin/python3) and non-dist py code from
+# extensions?
 
 set -eux; \
     cd /tmp && \
