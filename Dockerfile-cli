@@ -11,6 +11,7 @@ RUN apt-get -y update && \
       easy-rsa \
       gettext-base \
       perl-doc \
+      git \
       less \
       telnet \
       apache2-utils \
