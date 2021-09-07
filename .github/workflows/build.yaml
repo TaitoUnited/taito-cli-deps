@@ -30,6 +30,116 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build base
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-base
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:base
+
+      - name: Build cli
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-cli
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:cli
+
+      - name: Build ci
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci
+
+      - name: Build ci-dockerd
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-dockerd
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-dockerd
+
+      - name: Build ci-deploy
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-deploy
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-deploy
+
+      - name: Build ci-all
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-all
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-all
+
+      - name: Build ci-aws
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-aws
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-aws
+
+      - name: Build ci-azure
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-azure
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-azure
+
+      - name: Build ci-do
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-do
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-do
+
+      - name: Build ci-gcp
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-gcp
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-gcp
+
+      - name: Build ci-openshift
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-openshift
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-openshift
+
       - name: Build all
         uses: docker/build-push-action@v2
         with:
