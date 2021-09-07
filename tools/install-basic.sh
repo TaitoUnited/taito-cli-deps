@@ -7,6 +7,7 @@ set -eux; \
       curl \
       bash \
       jq \
+      zip \
       httpie \
       lsb-release \
       procps \

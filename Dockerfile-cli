@@ -70,7 +70,6 @@ RUN apt-get -y update && \
       xkcdpass \
       uuid-runtime \
       groff \
-      zip \
       dnsutils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
