@@ -13,3 +13,6 @@ RUN /taito-cli-deps/tools/install-terraform.sh
 # Install database tools for deploying database migrations to database
 RUN /taito-cli-deps/tools/install-db-clients.sh
 RUN /taito-cli-deps/tools/install-sqitch.sh
+
+# Initialize taito user
+RUN /taito-cli-deps/tools/user-init.sh taito
