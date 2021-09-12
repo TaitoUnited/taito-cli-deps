@@ -8,5 +8,5 @@ RUN /taito-cli-deps/tools/install-docker-bin.sh
 RUN /taito-cli-deps/tools/install-docker-compose.sh
 
 # Create taito user with uid:gid 1001:1001
-/taito-cli-deps/tools/user-create.sh taito 1001 1001
-/taito-cli-deps/tools/user-init.sh taito
+RUN /taito-cli-deps/tools/user-create.sh taito 1001 1001 && \
+    /taito-cli-deps/tools/user-init.sh taito
