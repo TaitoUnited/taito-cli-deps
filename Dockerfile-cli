@@ -60,7 +60,6 @@ RUN apt-get -y update && \
     apt-get -y install \
       easy-rsa \
       perl-doc \
-      git \
       less \
       telnet \
       apache2-utils \

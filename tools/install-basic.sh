@@ -7,6 +7,7 @@ set -eux; \
       curl \
       bash \
       jq \
+      git \
       zip \
       httpie \
       lsb-release \
