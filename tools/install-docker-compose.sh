@@ -6,8 +6,5 @@ set -eux; \
     mkdir -p ~/.docker/cli-plugins && \
     export DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION:-2.0.1} && \
     curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o ~/.docker/cli-plugins/docker-compose && \
-    chmod +x ~/.docker/cli-plugins/docker-compose && \
-
-    ## TODO: remove compose switch
-    curl -fL https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sh
+    chmod +x ~/.docker/cli-plugins/docker-compose
 fi
