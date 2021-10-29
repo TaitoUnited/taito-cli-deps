@@ -29,3 +29,6 @@ ${su} /bin/bash -c "
     az extension add --name azure-devops
   fi
 "
+
+# Terraform
+mkdir -p "${HOME}/.terraform.d/plugin-cache"
