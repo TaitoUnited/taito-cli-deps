@@ -3,8 +3,8 @@
 # TODO: use alternative installation for linux/arm64
 if [ ${TARGETPLATFORM} != "linux/arm64" ]; then
 set -eux; \
-    mkdir -p ~/.docker/cli-plugins && \
-    export DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION:-2.0.1} && \
-    curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o ~/.docker/cli-plugins/docker-compose && \
-    chmod +x ~/.docker/cli-plugins/docker-compose
+    mkdir -p /usr/local/lib/docker/cli-plugins && \
+    export DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION:-2.1.1} && \
+    curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/lib/docker/cli-plugins/docker-compose && \
+    chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 fi
