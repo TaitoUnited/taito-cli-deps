@@ -7,6 +7,7 @@ set -eux; \
       curl \
       bash \
       jq \
+      locales \
       git \
       zip \
       httpie \
