@@ -22,7 +22,7 @@ set -eux; \
     # TODO: enable (/usr/bin/az: line 3: /usr/bin/../../opt/az/bin/python3: No such file or directory)
     # az extension add --name azure-devops && \
 
-    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.0.13} && \
+    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.0.20} && \
     export KUBELOGIN_ARCH="linux-${TARGETPLATFORM#linux/}" && \
     # TODO: not available for linux/arm64?
     if [ ${KUBELOGIN_ARCH} = "linux-arm64" ]; then export KUBELOGIN_ARCH="darwin-arm64"; fi && \
