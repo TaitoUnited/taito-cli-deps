@@ -13,4 +13,5 @@ set -eux; \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     npm config set spin=false && \
-    npm config set progress=false
+    npm config set progress=false && \
+    corepack enable # For yarn
