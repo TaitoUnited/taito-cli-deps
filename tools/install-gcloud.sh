@@ -8,8 +8,5 @@ set -eux; \
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg |
       apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && \
     apt-get update -y && apt-get install google-cloud-sdk -y && \
-    # TODO: google-cloud-cli-gke-gcloud-auth-plugin not available for arm?
-    if [ ${TARGETPLATFORM} != "linux/arm64" ]; then
-        apt-get update -y && apt-get install google-cloud-cli-gke-gcloud-auth-plugin -y
-    fi
+    apt-get update -y && apt-get install google-cloud-cli-gke-gcloud-auth-plugin -y
 
