@@ -6,7 +6,7 @@ set -eux; \
 
     mkdir /terraform && \
     cd /terraform && \
-    export TERRAFORM_VERSION=${TERRAFORM_VERSION:-1.2.7} && \
+    export TERRAFORM_VERSION=${TERRAFORM_VERSION:-1.3.0} && \
     curl -o terraform.zip "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_${TARGETPLATFORM#linux/}.zip" && \
     unzip terraform.zip && \
     mv terraform /usr/local/bin/terraform && \
