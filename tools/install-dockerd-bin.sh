@@ -11,7 +11,7 @@ set -eux; \
       https://download.docker.com/linux/static/stable/${DOCKER_ARCH}/docker-$DOCKER_VERSION.tgz | \
       tar -xzvf - docker && \
     rm docker/docker && \
-    upx -9v docker/* && \
+    for file in docker/*; do upx -9v $file || echo "Packing failed"; done && \
     mv docker/* /usr/bin && \
     rmdir docker && \
 
