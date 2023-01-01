@@ -22,7 +22,7 @@ set -eux; \
     # TODO: enable (/usr/bin/az: line 3: /usr/bin/../../opt/az/bin/python3: No such file or directory)
     # az extension add --name azure-devops && \
 
-    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.0.24} && \
+    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.0.25} && \
     export KUBELOGIN_ARCH="linux-${TARGETPLATFORM#linux/}" && \
     curl -L "https://github.com/Azure/kubelogin/releases/download/v${KUBELOGIN_VERSION}/kubelogin-${KUBELOGIN_ARCH}.zip" --output kubelogin.zip && \
     unzip kubelogin.zip && \

@@ -4,7 +4,7 @@ set -eux; \
     curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg && \
     echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list && \
     apt-get -qqy update && \
-    export KUBECTL_VERSION=${KUBECTL_VERSION:-1.23.10-00} && \
+    export KUBECTL_VERSION=${KUBECTL_VERSION:-1.23.15-00} && \
     apt-get -qqy install "kubectl=${KUBECTL_VERSION}" && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
