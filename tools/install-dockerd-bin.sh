@@ -4,7 +4,7 @@ set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install upx-ucl iptables && \
 
-    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.22} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-20.10.23} && \
     export DOCKER_ARCH="x86_64" && \
     if [ ${TARGETPLATFORM} = "linux/arm64" ]; then export DOCKER_ARCH="aarch64"; fi && \
     curl -fsSL \
