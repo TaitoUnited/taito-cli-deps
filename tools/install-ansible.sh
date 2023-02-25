@@ -6,7 +6,7 @@ set -eux; \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 && \
     (apt-get -y update || :) && \
     # TODO: python3-pip and pip3 install ansible should not be required
-    apt-get -y install ansible python3-pip && \
+    apt-get -y install ansible python3-pip sshpass && \
     pip3 install ansible && \
     apt-get -qqy --purge remove python3-pip && \
     apt-get -qqy --purge autoremove && \
