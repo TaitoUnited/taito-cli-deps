@@ -12,7 +12,7 @@ set -eux; \
     upx -9v docker/docker && \
     mv docker/docker /usr/bin/docker && \
     rmdir docker && \
-    groupadd --gid 999 docker && \
+    groupadd docker && \
 
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
