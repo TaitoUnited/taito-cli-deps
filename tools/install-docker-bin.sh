@@ -4,7 +4,7 @@ set -eux; \
     apt-get -y update && \
     apt-get -y install upx-ucl && \
 
-    export DOCKER_VERSION=${DOCKER_VERSION:-23.0.1} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-24.0.7} && \
     export DOCKER_ARCH="x86_64" && \
     if [ ${TARGETPLATFORM} = "linux/arm64" ]; then export DOCKER_ARCH="aarch64"; fi && \
     curl -fsSL \

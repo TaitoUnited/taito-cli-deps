@@ -5,7 +5,7 @@
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install build-essential && \
-    export NODEJS_VERSION=${NODEJS_VERSION:-18.x} && \
+    export NODEJS_VERSION=${NODEJS_VERSION:-20.x} && \
     curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} | bash - && \
     apt-get -qqy update && apt-get -qqy install nodejs && \
     apt-get -qqy --purge remove build-essential && \
