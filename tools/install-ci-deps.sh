@@ -4,20 +4,7 @@
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install \
-      curl \
-      bash \
-      jq \
-      locales \
-      git \
-      zip \
-      httpie \
-      lsb-release \
-      procps \
-      gnupg \
-      gettext-base \
-      openvpn \
-      apt-transport-https \
-      ca-certificates \
+      git-lfs \
       software-properties-common && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
