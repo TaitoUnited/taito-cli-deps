@@ -1,4 +1,4 @@
-FROM debian:bookworm-20240311-slim
+FROM debian:bookworm-20231218-slim
 MAINTAINER Taito United <support@taitounited.fi>
 
 ARG TARGETPLATFORM
