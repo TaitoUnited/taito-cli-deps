@@ -6,8 +6,10 @@ set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install build-essential && \
     export NODEJS_VERSION=${NODEJS_VERSION:-20.x} && \
-    # TODO: deb.nodesource.com is deprecated!
-    curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION} | bash - && \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+     | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODEJS_VERSION nodistro main" \
+     > /etc/apt/sources.list.d/nodesource.list && \
     apt-get -qqy update && apt-get -qqy install nodejs && \
     apt-get -qqy --purge remove build-essential && \
     apt-get -qqy --purge autoremove && \
