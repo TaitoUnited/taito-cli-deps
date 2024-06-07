@@ -9,16 +9,21 @@ set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install unzip && \
 
-    curl -sL https://packages.microsoft.com/keys/microsoft.asc |
-      gpg --dearmor |
-      tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null && \
-    curl -sL https://packages.microsoft.com/keys/microsoft.asc |
-        gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.asc.gpg && \
-    echo "deb [arch=${TARGETPLATFORM#linux/}] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > \
-        /etc/apt/sources.list.d/azure-cli.list && \
+    curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
+      gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg && \
+
+    AZ_VERSION=${AZ_VERSION:-2.61.0} && \
+    AZ_DIST=$(lsb_release -cs) && \
+    echo "Types: deb
+    URIs: https://packages.microsoft.com/repos/azure-cli/
+    Suites: ${AZ_DIST}
+    Components: main
+    Architectures: $(dpkg --print-architecture)
+    Signed-by: /etc/apt/keyrings/microsoft.gpg" | 
+      tee /etc/apt/sources.list.d/azure-cli.sources && \
 
     apt-get -qqy update && \
-    apt-get -qqy install azure-cli && \
+    apt-get -qqy install azure-cli=${AZ_VERSION}-1~${AZ_DIST} && \
     # TODO: enable (/usr/bin/az: line 3: /usr/bin/../../opt/az/bin/python3: No such file or directory)
     # az extension add --name azure-devops && \
 
