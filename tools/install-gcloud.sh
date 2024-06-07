@@ -11,4 +11,9 @@ set -eux; \
     export GCLOUD_CLI_VERSION=${GCLOUD_SDK_VERSION:-457.0.0-0} && \
     export GCLOUD_AUTH_VERSION=${GCLOUD_AUTH_VERSION:-457.0.0-0} && \
     apt-get update -y && apt-get install google-cloud-sdk=${GCLOUD_CLI_VERSION} -y && \
-    apt-get update -y && apt-get install google-cloud-cli-gke-gcloud-auth-plugin=${GCLOUD_AUTH_VERSION} -y
+    apt-get update -y && apt-get install google-cloud-cli-gke-gcloud-auth-plugin=${GCLOUD_AUTH_VERSION} -y && \
+    # Install cloud sql proxy
+    export CLOUD_SQL_PROXY_VERSION=${CLOUD_SQL_PROXY_VERSION:-2.11.3} && \
+    curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v${CLOUD_SQL_PROXY_VERSION}/cloud-sql-proxy.linux.${TARGETPLATFORM#linux/} && \
+    chmod +x cloud-sql-proxy && \
+    mv cloud-sql-proxy /usr/local/bin
