@@ -1,10 +1,12 @@
 ---
-name: 'build images'
+name: "build images"
 
 on:
   push:
     branches:
       - master
+    tags:
+      - *
 
 jobs:
   build:
@@ -13,6 +15,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Set environment
+        run: |
+          BRANCH=${GITHUB_REF#refs/heads/}
+          TAG=${GITHUB_REF#refs/tags/}
+
+          SUFFIX="-${BRANCH}"
+          if [ ${GITHUB_REF} != ${TAG} ]; then
+            SUFFIX="-${TAG}"
+          fi
+          if [ ${BRANCH} = "master" ]; then
+            SUFFIX=
+          fi
+
+          echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+          echo "SUFFIX=${SUFFIX}" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@master
@@ -38,7 +56,7 @@ jobs:
           file: ./Dockerfile-base
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:base
+          tags: ghcr.io/taitounited/taito-cli-deps:base${{ env.SUFFIX }}
 
       - name: Build cli
         uses: docker/build-push-action@v2
@@ -48,7 +66,7 @@ jobs:
           file: ./Dockerfile-cli
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:cli
+          tags: ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
 
       - name: Build ci
         uses: docker/build-push-action@v2
@@ -58,7 +76,7 @@ jobs:
           file: ./Dockerfile-ci
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci
+          tags: ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}
 
       - name: Build ci-dockerd
         uses: docker/build-push-action@v2
@@ -68,7 +86,7 @@ jobs:
           file: ./Dockerfile-ci-dockerd
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-dockerd
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}
 
       - name: Build ci-deploy
         uses: docker/build-push-action@v2
@@ -78,7 +96,7 @@ jobs:
           file: ./Dockerfile-ci-deploy
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-deploy
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}
 
       - name: Build ci-all
         uses: docker/build-push-action@v2
@@ -88,7 +106,7 @@ jobs:
           file: ./Dockerfile-ci-all
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-all
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}
 
       - name: Build ci-aws
         uses: docker/build-push-action@v2
@@ -98,7 +116,7 @@ jobs:
           file: ./Dockerfile-ci-aws
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-aws
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}
 
       - name: Build ci-azure
         uses: docker/build-push-action@v2
@@ -108,7 +126,7 @@ jobs:
           file: ./Dockerfile-ci-azure
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-azure
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}
 
       - name: Build ci-do
         uses: docker/build-push-action@v2
@@ -118,7 +136,7 @@ jobs:
           file: ./Dockerfile-ci-do
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-do
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}
 
       - name: Build ci-gcp
         uses: docker/build-push-action@v2
@@ -128,7 +146,7 @@ jobs:
           file: ./Dockerfile-ci-gcp
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-gcp
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}
 
       - name: Build ci-openshift
         uses: docker/build-push-action@v2
@@ -138,7 +156,7 @@ jobs:
           file: ./Dockerfile-ci-openshift
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:ci-openshift
+          tags: ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}
 
       - name: Build all
         uses: docker/build-push-action@v2
@@ -148,4 +166,4 @@ jobs:
           file: ./Dockerfile-all
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/taitounited/taito-cli-deps:all
+          tags: ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}
