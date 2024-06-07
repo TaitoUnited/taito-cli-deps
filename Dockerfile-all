@@ -3,7 +3,6 @@
 # provides Docker and Docker Compose, as they are required by CI/CD.
 
 FROM ghcr.io/taitounited/taito-cli-deps:cli
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install dockerd
 # On AWS CodeBuild dockerd must be running when building docker images

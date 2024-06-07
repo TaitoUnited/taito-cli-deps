@@ -1,5 +1,4 @@
 FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install Azure CLI
 RUN /taito-cli-deps/tools/install-azure-cli.sh

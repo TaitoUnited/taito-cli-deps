@@ -1,5 +1,4 @@
 FROM ghcr.io/taitounited/taito-cli-deps:ci
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install Kubectl for deploying to Kubernetes
 RUN /taito-cli-deps/tools/install-kubectl.sh

@@ -1,5 +1,4 @@
 FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install gcloud sdk
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"

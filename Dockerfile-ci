@@ -1,5 +1,4 @@
 FROM ghcr.io/taitounited/taito-cli-deps:base
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install ci tools
 RUN /taito-cli-deps/tools/install-ci-tools.sh

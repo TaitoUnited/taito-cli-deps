@@ -1,5 +1,4 @@
 FROM ghcr.io/taitounited/taito-cli-deps:ci
-MAINTAINER Taito United <support@taitounited.fi>
 
 # Install dockerd
 # On some environments (e.g. AWS CodeBuild) dockerd must be running when
