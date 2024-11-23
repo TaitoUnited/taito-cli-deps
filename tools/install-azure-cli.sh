@@ -12,7 +12,7 @@ set -eux; \
     curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
       gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg && \
 
-    AZ_VERSION=${AZ_VERSION:-2.64.0} && \
+    AZ_VERSION=${AZ_VERSION:-2.67.0} && \
     AZ_DIST=$(lsb_release -cs) && \
     echo "Types: deb
 URIs: https://packages.microsoft.com/repos/azure-cli/

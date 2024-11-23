@@ -5,7 +5,7 @@
 set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install build-essential && \
-    export NODEJS_VERSION=${NODEJS_VERSION:-20.x} && \
+    export NODEJS_VERSION=${NODEJS_VERSION:-22.x} && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
      | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg && \
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODEJS_VERSION nodistro main" \
