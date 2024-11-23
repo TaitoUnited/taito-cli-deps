@@ -6,6 +6,9 @@ RUN /taito-cli-deps/tools/install-ci-tools.sh
 # Install Docker for executing docker builds
 RUN /taito-cli-deps/tools/install-docker-bin.sh
 
+# Install Docker buildx for docker buildx commands
+RUN /taito-cli-deps/tools/install-docker-buildx.sh
+
 # Install Docker Compose for running integration test suites
 RUN /taito-cli-deps/tools/install-docker-compose.sh
 
