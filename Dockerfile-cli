@@ -13,8 +13,9 @@ RUN /taito-cli-deps/tools/install-python3.sh
 # Install aws cli and aws-iam-authenticator for AWS
 RUN /taito-cli-deps/tools/install-aws.sh
 
-# Install Kubectl and k9s for Kubernetes
+# Install Kubectl, hnc and k9s for Kubernetes
 RUN /taito-cli-deps/tools/install-kubectl.sh
+RUN /taito-cli-deps/tools/install-kubectl-hnc.sh
 RUN /taito-cli-deps/tools/install-k9s.sh
 
 # Install Helm for Kubernetes
