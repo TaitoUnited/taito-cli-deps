@@ -10,7 +10,8 @@ set -eux; \
       locales \
       git \
       zip \
-      httpie \
+      # TODO: remove hittpie. httpie install failed and looks like it isn't used anywhere.
+      # httpie \
       lsb-release \
       procps \
       gnupg \
