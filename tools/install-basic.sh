@@ -12,6 +12,7 @@ set -eux; \
       locales \
       git \
       zip \
+      xz-utils \
       lsb-release \
       procps \
       gnupg \
