@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# NOTE: httpie was removed because of a installation problem. But looks like it isn't used anywhere.
+
 # TODO: most of these are not required in base image
 set -eux; \
     apt-get -qqy update && \
@@ -10,8 +12,6 @@ set -eux; \
       locales \
       git \
       zip \
-      # TODO: remove hittpie. httpie install failed and looks like it isn't used anywhere.
-      # httpie \
       lsb-release \
       procps \
       gnupg \
