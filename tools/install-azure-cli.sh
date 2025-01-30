@@ -12,7 +12,7 @@ set -eux; \
     curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
       gpg --dearmor -o /etc/apt/keyrings/microsoft.gpg && \
 
-    AZ_VERSION=${AZ_VERSION:-2.67.0} && \
+    AZ_VERSION=${AZ_VERSION:-2.68.0} && \
     AZ_DIST=$(lsb_release -cs) && \
     echo "Types: deb
 URIs: https://packages.microsoft.com/repos/azure-cli/
@@ -27,7 +27,7 @@ Signed-by: /etc/apt/keyrings/microsoft.gpg" |
     # TODO: enable (/usr/bin/az: line 3: /usr/bin/../../opt/az/bin/python3: No such file or directory)
     # az extension add --name azure-devops && \
 
-    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.1.4} && \
+    export KUBELOGIN_VERSION=${KUBELOGIN_VERSION:-0.1.6} && \
     export KUBELOGIN_ARCH="linux-${TARGETPLATFORM#linux/}" && \
     curl -L "https://github.com/Azure/kubelogin/releases/download/v${KUBELOGIN_VERSION}/kubelogin-${KUBELOGIN_ARCH}.zip" --output kubelogin.zip && \
     unzip kubelogin.zip && \

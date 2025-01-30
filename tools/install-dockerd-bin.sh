@@ -4,7 +4,7 @@ set -eux; \
     apt-get -qqy update && \
     apt-get -qqy install iptables && \
 
-    export DOCKER_VERSION=${DOCKER_VERSION:-27.3.1} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-27.5.1} && \
     export DOCKER_ARCH="x86_64" && \
     if [ ${TARGETPLATFORM} = "linux/arm64" ]; then export DOCKER_ARCH="aarch64"; fi && \
     curl -fsSL \
