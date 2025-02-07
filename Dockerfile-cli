@@ -74,6 +74,7 @@ RUN apt-get -y update && \
       uuid-runtime \
       groff \
       gettext \
+      pgcli \
       dnsutils && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
