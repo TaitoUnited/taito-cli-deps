@@ -2,6 +2,6 @@
 
 set -eux; \
     cd /tmp && \
-    export DO_VERSION=${DO_VERSION:-1.120.2} && \
+    export DO_VERSION=${DO_VERSION:-1.124.0} && \
     curl -sL "https://github.com/digitalocean/doctl/releases/download/v${DO_VERSION}/doctl-${DO_VERSION}-linux-${TARGETPLATFORM#linux/}.tar.gz" | tar -xzv && \
     mv doctl /usr/local/bin/doctl

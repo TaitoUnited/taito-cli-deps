@@ -3,7 +3,7 @@
 set -eux; \
     apt-get -y update && \
 
-    export DOCKER_VERSION=${DOCKER_VERSION:-27.5.1} && \
+    export DOCKER_VERSION=${DOCKER_VERSION:-28.0.4} && \
     export DOCKER_ARCH="x86_64" && \
     if [ ${TARGETPLATFORM} = "linux/arm64" ]; then export DOCKER_ARCH="aarch64"; fi && \
     curl -fsSL \
