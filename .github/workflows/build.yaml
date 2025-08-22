@@ -70,8 +70,8 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
-            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-amd64
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}-amd64
 
       - name: Build cli for arm64
         uses: docker/build-push-action@v5
@@ -82,8 +82,21 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: |
-            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
-            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-arm64
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}-arm64
+
+      - name: Combine cli manifest for amd64 and arm64
+        run: |
+          docker manifest create ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }} \
+            --amend ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-amd64 \
+            --amend ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-arm64
+
+          docker manifest create ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            --amend ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}-amd64 \
+            --amend ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}-arm64
+
+          docker manifest push ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
+          docker manifest push ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}
 
       - name: Build ci
         uses: docker/build-push-action@v5
