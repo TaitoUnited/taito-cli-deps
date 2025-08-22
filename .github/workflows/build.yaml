@@ -61,13 +61,25 @@ jobs:
             ghcr.io/taitounited/taito-cli-deps:base${{ env.SUFFIX }}
             ghcr.io/taitounited/taito-cli-deps:base${{ env.SUFFIX }}-${{ env.TAGDATE }}
 
-      - name: Build cli
+      - name: Build cli for amd64
         uses: docker/build-push-action@v5
         with:
           builder: ${{ steps.buildx.outputs.name }}
           context: .
           file: ./Dockerfile-cli
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
+            ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ env.TAGDATE }}
+
+      - name: Build cli for arm64
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-cli
+          platforms: linux/arm64
           push: true
           tags: |
             ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}
