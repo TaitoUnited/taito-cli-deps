@@ -8,4 +8,6 @@ set -eux; \
     apt-get -qqy --purge remove build-essential && \
     apt-get -qqy --purge autoremove && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    # fix owners after install (required for rootless docker)
+    chown -R root:root /root/.cpanm
