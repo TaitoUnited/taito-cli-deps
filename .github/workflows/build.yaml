@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: gcp-proto-vm
+    runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
       - name: Checkout
