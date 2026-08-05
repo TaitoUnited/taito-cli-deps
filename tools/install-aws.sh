@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # TODO: AWS bundle is quite large. Install only some of it or compress with upx.
+# TODO: Remove AWS CDK v1 installation!
 
 set -eux; \
     export AWS_ARCH="64bit" && \
