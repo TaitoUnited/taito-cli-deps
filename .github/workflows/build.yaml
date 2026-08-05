@@ -75,115 +75,115 @@ jobs:
           tags: |
             ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-dockerd
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-dockerd
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-dockerd
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-dockerd
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-deploy
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-deploy
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-deploy
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-deploy
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-all
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-all
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-all
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-all
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-aws
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-aws
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-aws
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-aws
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-azure
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-azure
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-azure
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-azure
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-do
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-do
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-do
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-do
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-gcp
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-gcp
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-gcp
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-gcp
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build ci-openshift
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-ci-openshift
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build ci-openshift
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-openshift
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-${{ matrix.tag }}
 
-      # - name: Build all
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #     builder: ${{ steps.buildx.outputs.name }}
-      #     context: .
-      #     file: ./Dockerfile-all
-      #     platforms: ${{ matrix.platform }}
-      #     push: true
-      #     tags: |
-      #       ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-${{ matrix.tag }}
+      - name: Build all
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-all
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-${{ matrix.tag }}
 
   manifest:
     needs: build
@@ -228,72 +228,72 @@ jobs:
             ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-amd64 \
             ghcr.io/taitounited/taito-cli-deps:cli${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-dockerd${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-deploy${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-all${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-aws${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-azure${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-do${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-openshift${{ env.SUFFIX }}-arm64
 
-      # - run: |
-      #     docker buildx imagetools create \
-      #       -t ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }} \
-      #       -t ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-${{ env.TAGDATE }} \
-      #       ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-amd64 \
-      #       ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-arm64
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:all${{ env.SUFFIX }}-arm64

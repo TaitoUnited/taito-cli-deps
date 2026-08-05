@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
+FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy-${TARGETARCH}
 
 # Install Azure CLI
 RUN /taito-cli-deps/tools/install-azure-cli.sh

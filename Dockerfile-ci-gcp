@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
+FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy-${TARGETARCH}
 
 # Install gcloud sdk
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"

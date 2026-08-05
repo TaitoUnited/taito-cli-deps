@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
+FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy-${TARGETARCH}
 
 # Install dockerd
 # On AWS CodeBuild dockerd must be running when building docker images

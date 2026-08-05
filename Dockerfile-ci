@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:base
+FROM ghcr.io/taitounited/taito-cli-deps:base-${TARGETARCH}
 
 # Install ci tools
 RUN /taito-cli-deps/tools/install-ci-tools.sh

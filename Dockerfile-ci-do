@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy
+FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy-${TARGETARCH}
 
 # Install digitalocean cli
 RUN /taito-cli-deps/tools/install-do.sh

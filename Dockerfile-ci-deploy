@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:ci
+FROM ghcr.io/taitounited/taito-cli-deps:ci-${TARGETARCH}
 
 # Install Kubectl for deploying to Kubernetes
 RUN /taito-cli-deps/tools/install-kubectl.sh
