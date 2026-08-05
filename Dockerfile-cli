@@ -1,4 +1,4 @@
-FROM ghcr.io/taitounited/taito-cli-deps:base
+FROM ghcr.io/taitounited/taito-cli-deps:base-${TARGETARCH}
 
 # TODO: Backwards compatibility for auth sessions. Remove later.
 RUN mkdir -p /builder/google-cloud-sdk/bin && \
