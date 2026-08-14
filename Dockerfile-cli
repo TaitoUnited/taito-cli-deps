@@ -55,6 +55,7 @@ RUN /taito-cli-deps/tools/install-argo-cli.sh
 
 # Install docker (required for executing CI/CD builds on container)
 RUN /taito-cli-deps/tools/install-docker-bin.sh
+RUN /taito-cli-deps/tools/install-docker-buildx.sh
 
 # Install ci tools
 RUN /taito-cli-deps/tools/install-ci-tools.sh
