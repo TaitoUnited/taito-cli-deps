@@ -18,9 +18,7 @@ set -eux; \
       gnupg \
       gettext-base \
       openvpn \
-      apt-transport-https \
-      ca-certificates \
-      software-properties-common && \
+      ca-certificates && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     # Install upx-ucl
