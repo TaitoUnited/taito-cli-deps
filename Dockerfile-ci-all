@@ -15,6 +15,9 @@ RUN /taito-cli-deps/tools/install-azure-cli.sh
 ENV PATH "$PATH:/opt/google-cloud-sdk/bin/"
 RUN /taito-cli-deps/tools/install-gcloud.sh
 
+# Install upcloud cli
+RUN /taito-cli-deps/tools/install-upcloud.sh
+
 # Install digitalocean cli
 RUN /taito-cli-deps/tools/install-do.sh
 

@@ -44,6 +44,9 @@ RUN /taito-cli-deps/tools/install-gcloud.sh
 # Install gcsfuse for mounting GCP storage buckets
 # RUN /taito-cli-deps/tools/install-gcsfuse.sh
 
+# Install upcloud cli
+RUN /taito-cli-deps/tools/install-upcloud.sh
+
 # Install digitalocean cli
 RUN /taito-cli-deps/tools/install-do.sh
 

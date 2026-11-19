@@ -163,6 +163,17 @@ jobs:
           tags: |
             ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ matrix.tag }}
 
+      - name: Build ci-upcloud
+        uses: docker/build-push-action@v5
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          context: .
+          file: ./Dockerfile-ci-upcloud
+          platforms: ${{ matrix.platform }}
+          push: true
+          tags: |
+            ghcr.io/taitounited/taito-cli-deps:ci-upcloud${{ env.SUFFIX }}-${{ matrix.tag }}
+
       - name: Build ci-openshift
         uses: docker/build-push-action@v5
         with:
@@ -283,6 +294,13 @@ jobs:
             -t ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-${{ env.TAGDATE }} \
             ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-amd64 \
             ghcr.io/taitounited/taito-cli-deps:ci-gcp${{ env.SUFFIX }}-arm64
+
+      - run: |
+          docker buildx imagetools create \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-upcloud${{ env.SUFFIX }} \
+            -t ghcr.io/taitounited/taito-cli-deps:ci-upcloud${{ env.SUFFIX }}-${{ env.TAGDATE }} \
+            ghcr.io/taitounited/taito-cli-deps:ci-upcloud${{ env.SUFFIX }}-amd64 \
+            ghcr.io/taitounited/taito-cli-deps:ci-upcloud${{ env.SUFFIX }}-arm64
 
       - run: |
           docker buildx imagetools create \

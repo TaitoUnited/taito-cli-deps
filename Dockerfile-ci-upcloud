@@ -1,0 +1,4 @@
+FROM ghcr.io/taitounited/taito-cli-deps:ci-deploy-${TARGETARCH}
+
+# Install upcloud cli
+RUN /taito-cli-deps/tools/install-upcloud.sh
