@@ -17,4 +17,5 @@ set -eux; \
     rm -rf /var/lib/apt/lists/* && \
     (npm config set -g spin=false || :) && \
     npm config set -g progress=false && \
+    npm install -g corepack && \
     corepack enable # For yarn
